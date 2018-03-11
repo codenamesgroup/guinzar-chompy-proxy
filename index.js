@@ -9,9 +9,9 @@ app.get('/:id', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.use('/title-bar/restaurant/:id', proxy('http://54.241.166.39/title-bar/restaurant/:id', {
+app.use('/title-bar/restaurant/:id', proxy('http://52.8.109.246/title-bar/restaurant/:id', {
   proxyReqPathResolver: function(req) {
-    return `http://54.241.166.39/title-bar/restaurant/` + req.params.id;
+    return `http://52.8.109.246/title-bar/restaurant/` + req.params.id;
   }
 }));
 app.use('/highlights/reviews/:id', proxy('http://54.241.166.39/highlights/reviews/:id', {
