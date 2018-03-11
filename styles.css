@@ -1,0 +1,23 @@
+.chompy-container {
+  display: flex;
+  flex-direction: column;
+}
+.bottom-container {
+  display: flex;
+  flex-direction: row;
+}
+#right_bottom_sidebar {
+  width: 300px;
+}
+/*#navbar {
+  height: 300px;
+}
+#app {
+  height: 300px;
+}
+#MapAndImages {
+  height: 300px;
+}
+#highlights {
+  height: 300px;
+}*/

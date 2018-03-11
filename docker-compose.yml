@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  reviews:
+    image: guinzar/reviews-service
+    ports: 
+      - '3004:3004'
+    networks:
+      - chompy
+  highlights:
+    image: jornelas/highlights
+    ports: 
+      - '3003:3003'
+    networks:
+      - chompy
+  map-and-images:
+    image: fermidirak/map-and-images
+    ports: 
+      - '3001:3001'
+    networks:
+      - chompy
+  rightside_sidebar:
+    image: c4carlton/rightside_sidebar
+    ports: 
+      - '3002:3002'
+    networks:
+      - chompy
+  proxy:
+    image: guinzar/proxy
+    depends_on:
+      - 'reviews'
+      - 'highlights'
+      - 'map-and-images'
+      - 'rightside_sidebar'
+    ports:
+      - '3000:3000'
+    networks:
+      - chompy
+networks:
+  chompy:
